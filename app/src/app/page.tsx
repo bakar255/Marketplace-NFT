@@ -9,6 +9,7 @@ export default function Home() {
     { id: 2, image: "nftpunk.webp", alt: "nft"},
     { id: 3, image: "nftpunk.webp", alt: "nft"},
   ]
+  ddsq
 
   return (
     <div className="min-w-lg">
