@@ -1,11 +1,14 @@
 "use client";
 
+import { BrowserProvider } from "ethers";
 import { ethers } from "ethers";
 import { useState } from "react";
+
 
 export const useWallet = () => {
   const [userAdresse, setUserAdresse] = useState<string>('');
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
+  const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
 
   const connectWallet = async () => {
     if (!window.ethereum) {
@@ -20,7 +23,12 @@ export const useWallet = () => {
 
     setSigner(signer);
     setUserAdresse(address);
+    setProvider(provider);
   };
 
-  return { connectWallet, userAdresse, signer };
+  function addrSlice(address : string) {
+  return address.slice(0,3 ) + "..." + address.slice(-2);
+  }
+
+  return { connectWallet, userAdresse, signer, provider, addrSlice };
 };

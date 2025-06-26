@@ -1,7 +1,33 @@
+import {useState, useEffect} from "react";
 import { ethers } from "ethers";
+import { BrowserProvider } from "ethers";
 
-export async function getSolde(address: string): Promise<string> {
-  const provider = new ethers.BrowserProvider(window.ethereum);
-  const balance = await provider.getBalance(address);
-  return ethers.utils.formatEther(balance);
-}
+export const useBalance = (address:string, provider: BrowserProvider | null) => {
+
+  const [balance, setBalance] = useState<string>('0');
+  const [loading, setLoading] = useState<boolean>(false);
+
+useEffect(() => {
+    const fetchBalance = async () => {
+      if (!address || !provider) {
+        setBalance('0');
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const balancepure = await provider.getBalance(address);
+        const BalanceFormat = parseFloat(ethers.formatEther(balancepure));
+        setBalance(parseFloat(BalanceFormat).toFixed(4));
+      } catch (err) { 
+        alert('Failed to fetch balance');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+       fetchBalance();
+  }, [address, provider]); 
+
+  return { balance, loading, BrowserProvider };
+};
