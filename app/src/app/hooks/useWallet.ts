@@ -9,6 +9,7 @@ export const useWallet = () => {
   const [userAdresse, setUserAdresse] = useState<string>('');
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
+  const [isConnected, setIsConnected] = useState<boolean>(false)
 
   const connectWallet = async () => {
     if (!window.ethereum) {
@@ -20,7 +21,7 @@ export const useWallet = () => {
     await provider.send("eth_requestAccounts", []);
     const signer = await provider.getSigner();
     const address = await signer.getAddress();
-
+    setIsConnected(true);
     setSigner(signer);
     setUserAdresse(address);
     setProvider(provider);
@@ -30,5 +31,19 @@ export const useWallet = () => {
   return address.slice(0,3 ) + "..." + address.slice(-2);
   }
 
-  return { connectWallet, userAdresse, signer, provider, addrSlice };
+
+
+  const disconnectWallet = async () => {
+    setUserAdresse("")
+    setSigner(null)
+    setProvider(null)
+    setIsConnected(false);  
+  }
+
+  
+   return { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected };
+
+  
 };
+
+
