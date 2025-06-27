@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaUser } from "react-icons/fa"; 
-import { FaWallet } from "react-icons/fa"; 
+import { FaWallet, FaUser } from "react-icons/fa"; 
 import { IoNotificationsSharp } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { useWallet } from "./hooks/useWallet";
@@ -11,7 +10,7 @@ import { useBalance } from "./hooks/getSolde";
 
    export default function Home() {
 
-   const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected } = useWallet();
+   const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
    const { balance, loading } = useBalance(userAdresse, provider);
 
   return (
@@ -25,7 +24,14 @@ import { useBalance } from "./hooks/getSolde";
           <button className="h-full w-full navbarbtn"></button>
            </div>
              <ul className="">
-               <li className="flex gap-2.5">
+                <li className="flex gap-2.5">
+                  <div className="mr-15">
+                  { BalanceOpen && ( 
+                    <div className="flex mt-2 ">
+                      <a>ETH {balance}</a>
+                    </div>
+                  )}
+                  </div>
                  <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome"> <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
                 <button className="bg-gray-900 rounded-lg flex items-center p-3 cursor-pointer buttonFahome"><IoNotificationsSharp className="rounded-lg cursor-pointer"/></button>
                <button  className={isConnected ? " flex colorGen rounded-lg p-3 py-2 cursor-pointer mr-4" : " flex colorGen cursor-pointer rounded-lg p-3 py-2 mr-4"}  onClick={isConnected ? disconnectWallet : connectWallet}>
@@ -36,7 +42,6 @@ import { useBalance } from "./hooks/getSolde";
             <main className="flex flex-col items-center mt-10 ">
           {/* Sélecteur de filtre */}
           <div className=" flex flex-col justify-center relative items-center space-y-2.5">
-          <a href="">SOLDE : {balance} ETH</a>
           </div>
         {/* NFT container */}
      <div className="flex flex-wrap gap-8 mt-8"> {/* Suppression de space-x-7 */}

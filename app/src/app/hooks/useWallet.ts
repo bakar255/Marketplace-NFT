@@ -9,14 +9,15 @@ export const useWallet = () => {
   const [userAdresse, setUserAdresse] = useState<string>('');
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
-  const [isConnected, setIsConnected] = useState<boolean>(false)
+  const [isConnected, setIsConnected] = useState<boolean>(false);
+  const [BalanceOpen, setBalanceOpen] = useState<boolean>(false);
+  
 
   const connectWallet = async () => {
     if (!window.ethereum) {
       alert("Please install MetaMask.");
       return;
     }
-
     const provider = new ethers.BrowserProvider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = await provider.getSigner();
@@ -25,6 +26,7 @@ export const useWallet = () => {
     setSigner(signer);
     setUserAdresse(address);
     setProvider(provider);
+    setBalanceOpen(true);
   };
 
   function addrSlice(address : string) {
@@ -32,16 +34,16 @@ export const useWallet = () => {
   }
 
 
-
   const disconnectWallet = async () => {
-    setUserAdresse("")
-    setSigner(null)
-    setProvider(null)
+    setUserAdresse("");
+    setSigner(null);
+    setProvider(null);
     setIsConnected(false);  
+    setBalanceOpen(false);
   }
 
   
-   return { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected };
+   return { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
 
   
 };
