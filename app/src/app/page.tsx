@@ -6,6 +6,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { useWallet } from "./hooks/useWallet";
 import { useBalance } from "./hooks/getSolde";
+import { WalletDropdown } from "./components/WalletDropdown"
 
 
    export default function Home() {
@@ -34,8 +35,7 @@ import { useBalance } from "./hooks/getSolde";
                   </div>
                  <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome"> <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
                 <button className="bg-gray-900 rounded-lg flex items-center p-3 cursor-pointer buttonFahome"><IoNotificationsSharp className="rounded-lg cursor-pointer"/></button>
-               <button  className={isConnected ? " flex colorGen rounded-lg p-3 py-2 cursor-pointer mr-4" : " flex colorGen cursor-pointer rounded-lg p-3 py-2 mr-4"}  onClick={isConnected ? disconnectWallet : connectWallet}>
-               {isConnected ? "Disconnect" : "Connect "}   <FaWallet className="ml-4 mt-1" /> </button>
+                <WalletDropdown />
              </li>
           </ul>
         </nav>

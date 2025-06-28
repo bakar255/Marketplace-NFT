@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1b1717;
+  --background: #1E1E24;
   --foreground: #ffffff;
 }
 
@@ -30,8 +30,10 @@ body {
 
 }
 
+
 .navbarbtn {
   
+  color: rgba(21, 22, 26, 0.692);
   font: bold;
   cursor: pointer;
   width: 100%;
@@ -51,6 +53,12 @@ body {
   background-color : rgb(134, 134, 187);
 }
 
+.color {
+  background-color: #42424e;
+
+
+}
+
 .input {
 
   outline: none;
@@ -64,4 +72,40 @@ body {
 
 .input-container:focus-within {
   border-color: rgb(134, 134, 187);
+}
+
+.dropdown-container {
+  width: 19rem;
+  top: 100%;
+  display: flex;
+  margin-top: 0.25rem;
+  z-index: 50;
+  left: -12rem;
+  position: absolute;
+  background-color: #1E1E24;
+  margin-right: 10px;
+  border-radius: 0.5rem;
+  border: 1px solid #36383b;
+}
+
+.dropdown-obj {
+
+  display: flex;
+}
+
+.dropdown-obj:hover {
+  background-color: gray;
+  border-radius: 0.25rem;
+}
+
+.paragraph {
+
+  font-size: 14px;
+}
+
+.icon {
+  background-color: #50505e;
+  border-radius: 100px;
+  padding: 1px;
+ 
 }
