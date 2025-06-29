@@ -18,7 +18,7 @@ import { WalletDropdown } from "./components/WalletDropdown"
      <div className="min-w-lg min-h-screen "> 
       <nav className=" font-bold shadow-sm min-h-15 rounded-lg items-center flex justify-between navbar-expand-lg bg-gray-800">
         <div className="mx-1 gap-8 flex ">  
-         <div className="min-h-[40px] w-80 bg-gray-900 flex rounded-lg input-container ml-30">
+         <div className="min-h-[40px] w-100 bg-gray-900 flex rounded-lg input-container ml-30">
           <IoIosSearch className="w-8 h-10 mx-3" />
           <input type="text" className="w-80 ml-2 text-white rounded-lg shadow-1 input" placeholder="Rechercher NFT's, Tokens..."/>
           </div>
