@@ -23,6 +23,13 @@ import { Notif } from "./components/notification"
           <IoIosSearch className="w-8 h-10 mx-3" />
           <input type="text" className="w-80 ml-2 text-white rounded-lg shadow-1 input" placeholder="Rechercher NFT's, Tokens..."/>
           </div>
+          <li className="list-none">
+            <ul className="space-x-8 mt-2 ">
+              <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
+              <a href="#" className=" text-gray-300 hover:text-gray-400">Create</a>
+              <a href="#" className="text-gray-400 hover:text-gray-100">Sell</a>
+            </ul>
+          </li>
           <button className="h-full w-full navbarbtn"></button>
            </div>
              <ul className="">
@@ -41,6 +48,8 @@ import { Notif } from "./components/notification"
           </ul>
         </nav>
             <main className="flex flex-col items-center mt-10 ">
+              <a className="text-4xl font-bold">The NFT Marketplace ! </a>
+              <a className="text-2 leading-4">where you can buy and sell your NFT's !</a>
           {/* Sélecteur de filtre */}
           <div className=" flex flex-col justify-center relative items-center space-y-2.5">
           </div>
