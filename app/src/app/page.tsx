@@ -7,6 +7,7 @@ import { IoIosSearch } from "react-icons/io";
 import { useWallet } from "./hooks/useWallet";
 import { useBalance } from "./hooks/getSolde";
 import { WalletDropdown } from "./components/WalletDropdown"
+import { Notif } from "./components/notification"
 
 
    export default function Home() {
@@ -34,7 +35,7 @@ import { WalletDropdown } from "./components/WalletDropdown"
                   )}
                   </div>
                  <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome"> <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
-                <button className="bg-gray-900 rounded-lg flex items-center p-3 cursor-pointer buttonFahome"><IoNotificationsSharp className="rounded-lg cursor-pointer"/></button>
+                 <Notif />
                 <WalletDropdown />
              </li>
           </ul>
