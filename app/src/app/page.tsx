@@ -27,7 +27,7 @@ import { Card } from "./components/card"
             <ul className="space-x-8 mt-2 ">
               <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
               <a href="#" className=" text-gray-300 hover:text-gray-400">Create</a>
-              <a href="#" className="text-gray-400 hover:text-gray-100">Sell</a>
+              <a href="#" className="text-gray-300 hover:text-gray-400">Sell</a>
             </ul>
           </li>
           <button className="h-full w-full navbarbtn"></button>

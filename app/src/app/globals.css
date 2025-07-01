@@ -109,3 +109,42 @@ body {
   padding: 1px;
  
 }
+
+.notif {
+  position: flex;
+  border-radius: 0.25rem;
+  background-color: #1E1E24;
+  box-shadow: 0 0 20px rgba(5,5, 5, 0.5);
+  padding: 5px;
+}
+
+.modelProvider {
+  background-color: #282830 ;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  height: 20rem;
+  width: 25rem;
+  text-align: center;
+  border-radius: 0.50rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(9, 9, 10, 0.5);
+  
+}
+
+.x {
+
+    background-color: #444444 ;
+    position: absolute;
+    padding: 4px;
+    border-radius: 0.20rem;
+    right: 0;
+  }
+
+.x:hover{
+  background-color: #50505e;
+}

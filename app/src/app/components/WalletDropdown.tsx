@@ -1,14 +1,15 @@
 import { useState, useEffect, useRef} from "react";
 import { useWallet } from "../hooks/useWallet";
 import { FaWallet, FaChevronDown, FaUser} from "react-icons/fa";
-import { IoSendOutline, IoToggleOutline } from "react-icons/io5";
-import { IoMdSettings } from "react-icons/io";
+import { IoSendOutline, IoToggleOutline, } from "react-icons/io5";
+import { IoMdSettings, IoMdClose } from "react-icons/io";
 import { AiOutlineDisconnect } from "react-icons/ai";
 
 export const WalletDropdown = () => {
 
   const [isOpen, setIsOpen] = useState (false)
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const [ModelProvider, setModelProvider] = useState(false);
   const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
 
  useEffect(() =>  {
@@ -19,6 +20,23 @@ export const WalletDropdown = () => {
  })
 
 
+ const walletProvider = [
+  
+  {
+    id: 1,
+    provider: "Metamask",
+  },
+
+  {
+    id: 2,
+    provider: "WalletConnect",
+  },
+
+  {
+  id:3,
+  provider: "Coinbase Wallet",
+  }
+ ]
 
 const Obj = [ 
   {
@@ -50,18 +68,34 @@ const Obj = [
     onClick: () => disconnectWallet()
   },
   
-  
 ]
+
+
 
 return (
   <div ref={dropdownRef} className="relative">
-    <button onClick={isConnected ? () => setIsOpen(!isOpen) : connectWallet}
+    {/* Button connectWallet  */}
+    <button onClick={isConnected ? () => setIsOpen(!isOpen) : () => setModelProvider(true)}
      className="colorGen rounded-lg py-2 text-white flex p-3 focus:outline mr-3 ">
         {isConnected ? addrSlice(userAdresse) : "Connect Wallet" } 
         {isConnected && (
            <FaChevronDown className={` mx-2  transition-tranform ${isOpen ? "rotate-180" : ''}`} />
         )}
     </button>
+    {/* Container Proivder  */}
+    { ModelProvider && (  
+    <div className="modelProvider">
+      <div className=" flex justify-between relative"> 
+       <label className="block font-bold text-left mb-4"> Connect your wallet</label>
+       <button className="x" onClick={ () => setModelProvider(false)}> <IoMdClose /> </button>
+       </div>
+       <div className="bg-gray-600 rounded-lg py-2 hover:bg-gray-500 cursor-pointer mt-4 font-bold text-left flex">
+        <img src="MetaMask_Fox.svg.png" alt="fox" className="w-10 h-10 " />
+        <button className="mx-2">Metamask</button>
+       </div>
+    </div>
+    )}
+    {/* State variable set true */}
     {isConnected && isOpen && (
       <div className="dropdown-container flex flex-col">
         {Obj.map((item) => (
