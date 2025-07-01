@@ -8,7 +8,7 @@ import { useWallet } from "./hooks/useWallet";
 import { useBalance } from "./hooks/getSolde";
 import { WalletDropdown } from "./components/WalletDropdown"
 import { Notif } from "./components/notification"
-
+import { Card } from "./components/card"
 
    export default function Home() {
 
@@ -50,12 +50,11 @@ import { Notif } from "./components/notification"
             <main className="flex flex-col items-center mt-10 ">
               <a className="text-4xl font-bold">The NFT Marketplace ! </a>
               <a className="text-2 leading-4">where you can buy and sell your NFT's !</a>
-          {/* Sélecteur de filtre */}
           <div className=" flex flex-col justify-center relative items-center space-y-2.5">
           </div>
         {/* NFT container */}
-     <div className="flex flex-wrap gap-8 mt-8"> {/* Suppression de space-x-7 */}
-  <div className="w-70 h-80 bg-gray-500 rounded-lg flex flex-col items-center pb-7 p-1"> {/* Suppression de relative inutile ici */}
+     <div className="flex flex-wrap gap-8 mt-8"> 
+  <div className="w-70 h-80 bg-gray-500 rounded-lg flex flex-col items-center pb-7 p-1"> 
     <img 
       src="singe.nft.png" 
       alt="singe.nft" 
@@ -63,7 +62,8 @@ import { Notif } from "./components/notification"
        <button className="w-20 text-white bg-blue-600 py-2 px-6 rounded-lg cursor-pointer">
         Buy
         </button>
-       <div className="w-full px-4"> {/* Conteneur interne pour le bouton */}  
+        <Card />
+       <div className="w-full px-4">  
     </div>
   </div>
 </div>
