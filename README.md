@@ -1,6 +1,18 @@
 ## NFT Marketplace
 
-This project overview a marketplace with NFT, where you can buy (mint) and sell NFT's, you can connect your wallet and interact with the marketplace and smart contracts homemade, smart contracts list NFT and create which of them,
-i made it with NextJS.
+## Overview
+A decentralized NFT marketplace built with Next.js where users can mint, buy, and sell digital assets. 
+The platform features wallet connectivity and interacts with custom smart contracts that handle NFT listing and creation
 
-## Features
+## Key Features
+
+- **NFT Minting**: Create and list your own digital assets
+- **Marketplace**: Browse and purchase NFTs from other creators
+- **Smart Contracts**: Custom Solidity contracts for NFT management
+- **Next.js Framework**: Modern React framework for optimal performance
+
+
+## Functionnality 
+
+
+
