@@ -25,16 +25,20 @@ export const WalletDropdown = () => {
   {
     id: 1,
     provider: "Metamask",
+    img:"MetaMask_Fox.svg.png",
+    onClick: () => connectWallet
   },
 
   {
     id: 2,
     provider: "WalletConnect",
+    img: "Wallet.svg"
   },
 
   {
   id:3,
   provider: "Coinbase Wallet",
+  img: "realcoinbase.svg"
   }
  ]
 
@@ -89,10 +93,14 @@ return (
        <label className="block font-bold text-left mb-4"> Connect your wallet</label>
        <button className="x" onClick={ () => setModelProvider(false)}> <IoMdClose /> </button>
        </div>
-       <div className="bg-gray-600 rounded-lg py-2 hover:bg-gray-500 cursor-pointer mt-4 font-bold text-left flex">
-        <img src="MetaMask_Fox.svg.png" alt="fox" className="w-10 h-10 " />
-        <button className="mx-2">Metamask</button>
-       </div>
+       {walletProvider.map((provider) =>(
+        <div
+        className="bg-gray-600 rounded-lg py-2 hover:bg-gray-500 cursor-pointer mt-4 font-bold text-left flex"
+        key={provider.id}>
+        <img src={provider.img} alt=""  className="w-10 h-10"/>
+           <button className="mx-3" onClick={provider.onClick}>{provider.provider}</button>
+        </div>
+       ))}
     </div>
     )}
     {/* State variable set true */}

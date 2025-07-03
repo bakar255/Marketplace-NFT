@@ -27,7 +27,7 @@ import { Card } from "./components/card"
             <ul className="space-x-8 mt-2 ">
               <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
               <a href="#" className=" text-gray-300 hover:text-gray-400">Create</a>
-              <a href="#" className="text-gray-300 hover:text-gray-400">Sell</a>
+              <a href="#" className="text-gray-3%00 hover:text-gray-400">Sell</a>
             </ul>
           </li>
           <button className="h-full w-full navbarbtn"></button>
@@ -55,13 +55,6 @@ import { Card } from "./components/card"
         {/* NFT container */}
      <div className="flex flex-wrap gap-8 mt-8"> 
   <div className="w-70 h-80 bg-gray-500 rounded-lg flex flex-col items-center pb-7 p-1"> 
-    <img 
-      src="singe.nft.png" 
-      alt="singe.nft" 
-      className="h-full w-full object-cover mb-4 rounded-lg" />
-       <button className="w-20 text-white bg-blue-600 py-2 px-6 rounded-lg cursor-pointer">
-        Buy
-        </button>
         <Card />
        <div className="w-full px-4">  
     </div>
