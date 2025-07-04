@@ -17,7 +17,7 @@ import { Card } from "./components/card"
 
   return (
      <div className="min-w-lg min-h-screen "> 
-      <nav className=" font-bold shadow-sm min-h-15 rounded-lg items-center flex justify-between navbar-expand-lg bg-gray-800">
+      <nav className=" font-bold shadow-sm min-h-15 rounded-lg items-center flex justify-between navbar-expand-lg color">
         <div className="mx-1 gap-8 flex ">  
          <div className="min-h-[40px] w-100 bg-gray-900 flex rounded-lg input-container ml-30">
           <IoIosSearch className="w-8 h-10 mx-3" />
@@ -43,24 +43,18 @@ import { Card } from "./components/card"
                   </div>
                  <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome"> <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
                  <Notif />
-                <WalletDropdown />
+                <WalletDropdown  />
              </li>
           </ul>
         </nav>
-            <main className="flex flex-col items-center mt-10 ">
-              <a className="text-4xl font-bold">The NFT Marketplace ! </a>
-              <a className="text-2 leading-4">where you can buy and sell your NFT's !</a>
-          <div className=" flex flex-col justify-center relative items-center space-y-2.5">
-          </div>
+            <main className="">
         {/* NFT container */}
-     <div className="flex flex-wrap gap-8 mt-8"> 
-  <div className="w-70 h-80 bg-gray-500 rounded-lg flex flex-col items-center pb-7 p-1"> 
-        <Card />
+         <div className="showcase-container"> 
+         <Card /> 
        <div className="w-full px-4">  
     </div>
-  </div>
-</div>
-</main>
+    </div>
+ </main>
       <footer className="">
       </footer>
     </div>

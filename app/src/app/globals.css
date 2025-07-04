@@ -54,7 +54,7 @@ body {
 }
 
 .color {
-  background-color: #42424e;
+  background-color: #1E1E24;
 
 
 }
@@ -68,6 +68,7 @@ body {
   border: 2px solid;
   outline: none;
   transition: border-color 0.3s;
+  background-color:  #1b1b3a;
 }
 
 .input-container:focus-within {
@@ -147,4 +148,25 @@ body {
 
 .x:hover{
   background-color: #50505e;
+}
+
+.buttonConnect{
+  padding: 1rem;
+  background-color: #303069;
+  border-radius: 0.50rem;
+  color: white;
+  padding-block: 0.50rem;
+  margin-right: 15px
+   
+}
+
+.showcase-container {
+
+  width: 80%;
+  height: 50vh;
+  border-radius: 0.70rem;
+  background-color: #15151b;
+  color: white;
+  display: grid;
+  margin: 3rem auto;
 }

@@ -80,7 +80,7 @@ return (
   <div ref={dropdownRef} className="relative">
     {/* Button connectWallet  */}
     <button onClick={isConnected ? () => setIsOpen(!isOpen) : () => setModelProvider(true)}
-     className="colorGen rounded-lg py-2 text-white flex p-3 focus:outline mr-3 ">
+     className="buttonConnect">
         {isConnected ? addrSlice(userAdresse) : "Connect Wallet" } 
         {isConnected && (
            <FaChevronDown className={` mx-2  transition-tranform ${isOpen ? "rotate-180" : ''}`} />
