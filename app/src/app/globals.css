@@ -50,7 +50,7 @@ body {
 }
 
 .colorGen {
-  background-color : rgb(134, 134, 187);
+ background-color: #303069;
 }
 
 .color {
@@ -161,12 +161,19 @@ body {
 }
 
 .showcase-container {
-
   width: 80%;
-  height: 50vh;
+  min-height: 50vh;
   border-radius: 0.70rem;
   background-color: #15151b;
   color: white;
   display: grid;
+  grid-template-columns: 1fr; 
   margin: 3rem auto;
+  padding: 1rem;
+  gap: 2rem; 
+}
+
+.lowercase {
+  size: 1rem;
+  font: bold;
 }

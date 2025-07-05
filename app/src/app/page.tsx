@@ -49,7 +49,8 @@ import { Card } from "./components/card"
         </nav>
             <main className="">
         {/* NFT container */}
-         <div className="showcase-container"> 
+         <div className="showcase-container "> 
+         <p></p>
          <Card /> 
        <div className="w-full px-4">  
     </div>
