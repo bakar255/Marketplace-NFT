@@ -6,8 +6,9 @@ import { IoMdSettings, IoMdClose } from "react-icons/io";
 import { AiOutlineDisconnect } from "react-icons/ai";
 
 export const WalletDropdown = () => {
-
+ 
   const [isOpen, setIsOpen] = useState (false)
+  const [providerDetected,setProviderDetected] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [ModelProvider, setModelProvider] = useState(false);
   const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
@@ -26,7 +27,7 @@ export const WalletDropdown = () => {
     id: 1,
     provider: "Metamask",
     img:"MetaMask_Fox.svg.png",
-    onClick: () => connectWallet
+    onClick: () => connectWallet()
   },
 
   {
@@ -74,16 +75,13 @@ const Obj = [
   
 ]
 
-
-
 return (
   <div ref={dropdownRef} className="relative">
     {/* Button connectWallet  */}
     <button onClick={isConnected ? () => setIsOpen(!isOpen) : () => setModelProvider(true)}
-     className="buttonConnect">
+     className="buttonConnect flex cursor-pointer">
         {isConnected ? addrSlice(userAdresse) : "Connect Wallet" } 
-        {isConnected && (
-           <FaChevronDown className={` mx-2  transition-tranform ${isOpen ? "rotate-180" : ''}`} />
+        {isConnected && (  <FaChevronDown className={`transition-tranform ${isOpen ? "rotate-180" : ''}`}/>
         )}
     </button>
     {/* Container Proivder  */}
@@ -91,19 +89,19 @@ return (
     <div className="modelProvider">
       <div className=" flex justify-between relative"> 
        <label className="block font-bold text-left mb-4"> Connect your wallet</label>
-       <button className="x" onClick={ () => setModelProvider(false)}> <IoMdClose /> </button>
+       <button className="x cursor-pointer" onClick={ () => setModelProvider(false)}> <IoMdClose /> </button>
        </div>
        {walletProvider.map((provider) =>(
         <div
-        className="bg-gray-600 rounded-lg py-2 hover:bg-gray-500 cursor-pointer mt-4 font-bold text-left flex"
+        className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex"
         key={provider.id}>
-        <img src={provider.img} alt=""  className="w-10 h-10"/>
+        <img src={provider.img} alt=""  className="w-10 h-10 ml-2"/>
            <button className="mx-3" onClick={provider.onClick}>{provider.provider}</button>
         </div>
        ))}
     </div>
     )}
-    {/* State variable set true */}
+    {/* Wallet Dropdown obj*/}
     {isConnected && isOpen && (
       <div className="dropdown-container flex flex-col">
         {Obj.map((item) => (

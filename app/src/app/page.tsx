@@ -13,7 +13,7 @@ import { Card } from "./components/card"
    export default function Home() {
 
    const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
-   const { balance, loading } = useBalance(userAdresse, provider);
+   const { balance, loading} = useBalance(userAdresse, provider,);
 
   return (
      <div className="min-w-lg min-h-screen "> 
@@ -27,7 +27,7 @@ import { Card } from "./components/card"
             <ul className="space-x-8 mt-2 ">
               <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
               <a href="#" className=" text-gray-300 hover:text-gray-400">Create</a>
-              <a href="#" className="text-gray-3%00 hover:text-gray-400">Sell</a>
+              <a href="#" className="text-gray-300 hover:text-gray-400">Sell</a>
             </ul>
           </li>
           <button className="h-full w-full navbarbtn"></button>
@@ -36,8 +36,9 @@ import { Card } from "./components/card"
                 <li className="flex gap-2.5">
                   <div className="mr-15">
                   { BalanceOpen && ( 
-                    <div className="flex mt-2 ">
-                      <a>ETH {balance}</a>
+                    <div className="flex mt-2 space-y-2 ">
+                      <a className="mr-3"> </a>
+                      <span>{balance}</span>
                     </div>
                   )}
                   </div>
@@ -49,7 +50,10 @@ import { Card } from "./components/card"
         </nav>
             <main className="">
         {/* NFT container */}
-         <div className="showcase-container "> 
+         <div className="showcase-container"> 
+          <div className="flex flex-col items-center">
+             
+          </div>
          <p></p>
          <Card /> 
        <div className="w-full px-4">  

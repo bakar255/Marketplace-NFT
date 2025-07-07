@@ -4,14 +4,14 @@ import { BrowserProvider } from "ethers";
 
 export const useBalance = (address:string, provider: BrowserProvider | null) => {
 
-  const [balance, setBalance] = useState<string>('0');
+  const [balance, setBalance] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [BalanceOpen, setBalanceOpen] = useState<boolean>(false);
 
 useEffect(() => {
     const fetchBalance = async () => {
       if (!address || !provider) {
-        setBalance('0');
+        setBalance('0.00');
         return;
       }
 
@@ -31,5 +31,5 @@ useEffect(() => {
   }, [address, provider]); 
 
  
-  return { balance, loading, BrowserProvider };
+  return { balance, BalanceOpen, loading, BrowserProvider };
 };
