@@ -4,7 +4,7 @@ import { FaEthereum } from "react-icons/fa";
 import { LuFilter } from "react-icons/lu";
 
 
-export const Card =  () => {
+export const Card = () => {
 
     //@dev
     // This component let the image covered all the container and when is visible

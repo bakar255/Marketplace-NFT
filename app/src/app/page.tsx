@@ -6,9 +6,10 @@ import { IoNotificationsSharp } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { useWallet } from "./hooks/useWallet";
 import { useBalance } from "./hooks/getSolde";
-import { WalletDropdown } from "./components/WalletDropdown"
-import { Notif } from "./components/notification"
-import { Card } from "./components/card"
+import { WalletDropdown } from "./components/WalletDropdown";
+import { Notif } from "./components/notification";
+import { Card } from "./components/card";
+import { User } from "./components/FaUser";
 
    export default function Home() {
 
@@ -42,7 +43,8 @@ import { Card } from "./components/card"
                     </div>
                   )}
                   </div>
-                 <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome"> <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
+                  <User/>
+                 <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome">  <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
                  <Notif />
                 <WalletDropdown  />
              </li>
@@ -52,7 +54,6 @@ import { Card } from "./components/card"
         {/* NFT container */}
          <div className="showcase-container"> 
           <div className="flex flex-col items-center">
-             
           </div>
          <p></p>
          <Card /> 
