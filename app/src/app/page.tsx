@@ -27,7 +27,7 @@ import { User } from "./components/FaUser";
           <li className="list-none">
             <ul className="space-x-8 mt-2 ">
               <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
-              <a href="#" className=" text-gray-300 hover:text-gray-400">Create</a>
+              <a href="/#create" className=" text-gray-300 hover:text-gray-400">Create</a>
               <a href="#" className="text-gray-300 hover:text-gray-400">Sell</a>
             </ul>
           </li>

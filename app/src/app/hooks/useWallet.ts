@@ -3,6 +3,8 @@
 import { BrowserProvider } from "ethers";
 import { ethers } from "ethers";
 import { useState } from "react";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import { CoinbaseWalletSDK } from '@coinbase/wallet-sdk';
 
 
 export const useWallet = () => {
@@ -18,6 +20,7 @@ export const useWallet = () => {
       alert("Please install MetaMask.");
       return;
     }
+    try {
     const provider = new ethers.BrowserProvider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = await provider.getSigner();
@@ -27,7 +30,27 @@ export const useWallet = () => {
     setUserAdresse(address);
     setProvider(provider);
     setBalanceOpen(true);
-  };
+    } catch (error) {
+      console.log("Error Connecting wallet")
+    }
+  }
+
+const connectWalletConnect = async () => {
+  try {
+    const walletConnectProvider = new WalletConnectProvider({
+      rpc: {
+        1: "https://mainnet.infura.io/v3/8eb79aff59ef473c8d08a2b6d6de8096",
+      },
+      chainId: 1,
+    });
+
+    await walletConnectProvider.enable();
+    
+  } catch (error) {
+    console.error("WalletConnect error:", error);
+  }
+};
+
 
   function addrSlice(address : string) {
   return address.slice(0,3 ) + "..." + address.slice(-2);
@@ -43,7 +66,7 @@ export const useWallet = () => {
   }
 
   
-   return { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
+   return { connectWallet, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
 
   
 };

@@ -11,7 +11,7 @@ export const WalletDropdown = () => {
   const [providerDetected,setProviderDetected] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [ModelProvider, setModelProvider] = useState(false);
-  const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
+  const { connectWallet, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
 
  useEffect(() =>  {
   const HandleClickOutside = (event: MouseEvent) => {
@@ -33,7 +33,8 @@ export const WalletDropdown = () => {
   {
     id: 2,
     provider: "WalletConnect",
-    img: "Wallet.svg"
+    img: "Wallet.svg",
+    onClick: () => connectWalletConnect()
   },
 
   {
@@ -93,10 +94,9 @@ return (
        </div>
        {walletProvider.map((provider) =>(
         <div
-        className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex"
-        key={provider.id}>
+        className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex" key={provider.id}>
         <img src={provider.img} alt=""  className="w-10 h-10 ml-2"/>
-           <button className="mx-3" onClick={provider.onClick}>{provider.provider}</button>
+           <button className="mx-3 cursor-pointer" onClick={provider.onClick}>{provider.provider}</button>
         </div>
        ))}
     </div>

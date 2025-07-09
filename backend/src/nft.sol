@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract MyToken is ERC721Pausable, Ownable(msg.sender) {
+contract Nft is ERC721Pausable, Ownable(msg.sender) {
 
     uint256 public constant MAX_SUPPLY = 100000;
     uint256 public mintPrice = 0.1 ether;
