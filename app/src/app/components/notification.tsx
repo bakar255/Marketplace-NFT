@@ -12,7 +12,7 @@ export const Notif = () => {
 
     return (
         <div ref={notifRef} onMouseEnter={onNotif} onMouseLeave={offNotif}>
-        <button className="bg-gray-900 rounded-lg flex items-center p-3 cursor-pointer buttonFahome"><IoNotificationsSharp/></button>
+        <button className=" rounded-lg flex items-center p-3 cursor-pointer buttonFahome"><IoNotificationsSharp/></button>
         {notifup && (
           <div className=" flex absolute z-50 top-1/13 right-3 p-6 notif rounded-lg w-62">
             <div className=" p-3 rounded-xl mx-auto flex flex-col">

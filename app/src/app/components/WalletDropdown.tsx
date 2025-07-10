@@ -90,13 +90,13 @@ return (
     <div className="modelProvider">
       <div className=" flex justify-between relative"> 
        <label className="block font-bold text-left mb-4"> Connect your wallet</label>
-       <button className="x cursor-pointer" onClick={ () => setModelProvider(false)}> <IoMdClose /> </button>
+       <button className="x cursor-pointer" onClick={() => setModelProvider(false)}> <IoMdClose /> </button>
        </div>
        {walletProvider.map((provider) =>(
         <div
         className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex" key={provider.id}>
         <img src={provider.img} alt=""  className="w-10 h-10 ml-2"/>
-           <button className="mx-3 cursor-pointer" onClick={provider.onClick}>{provider.provider}</button>
+           <button className="mx-3 cursor-pointer" onClick={() => {provider.onClick}}  >{provider.provider}</button>
         </div>
        ))}
     </div>

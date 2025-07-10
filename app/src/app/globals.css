@@ -50,11 +50,12 @@ body {
 }
 
 .colorGen {
- background-color: #303069;
+ background-color: rgb(134, 134, 187);
 }
 
 .color {
-  background-color: #1E1E24;
+  background-color: #15151b;
+  border-color: rgb(39, 39, 92);
 
 
 }
@@ -120,7 +121,7 @@ body {
 }
 
 .modelProvider {
-  background-color: #282830 ;
+  background-color: #111114 ;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -176,4 +177,13 @@ body {
 .lowercase {
   size: 1rem;
   font: bold;
+}
+
+.Profile {
+  height: 120%;
+  backdrop-filter: blur(20px);
+  width: 20%;
+  background-color: #111114;
+  box-shadow: 0 0 10px rgba(5,5, 5, 0.5);
+  transition: all ease-in-out 0.3s;
 }

@@ -53,7 +53,8 @@ const connectWalletConnect = async () => {
 
 
   function addrSlice(address : string) {
-  return address.slice(0,3 ) + "..." + address.slice(-2);
+    if(!address) return ("");
+  return  `${address.slice(0,4)}...${address.slice(-2)}`
   }
 
 

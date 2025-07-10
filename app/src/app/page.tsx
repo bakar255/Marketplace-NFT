@@ -44,7 +44,6 @@ import { User } from "./components/FaUser";
                   )}
                   </div>
                   <User/>
-                 <button className="bg-gray-900 rounded-lg flex items-center p-2 cursor-pointer buttonFahome">  <FaUser className="rounded-lg cursor-pointer mr-1 w-6"/> </button>
                  <Notif />
                 <WalletDropdown  />
              </li>
@@ -55,10 +54,11 @@ import { User } from "./components/FaUser";
          <div className="showcase-container"> 
           <div className="flex flex-col items-center">
           </div>
-         <p></p>
+          <div>
+            <p className="text-4xl font-bold block">LATEST DROPS </p>
+            <p className="border-1 border-solid mt-5.5"></p>
+          </div>
          <Card /> 
-       <div className="w-full px-4">  
-    </div>
     </div>
  </main>
       <footer className="">
