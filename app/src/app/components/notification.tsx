@@ -4,6 +4,7 @@ import { IoNotificationsSharp } from "react-icons/io5";
 export const Notif = () => {
 
     const [notifup, setNotifUp ] = useState<boolean>(false);
+    
     const notifRef = useRef<HTMLDivElement>(null);
 
 
