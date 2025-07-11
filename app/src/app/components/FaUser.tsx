@@ -1,5 +1,5 @@
 import { FaUser } from "react-icons/fa"; 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CiInboxIn } from "react-icons/ci";
 import { CiInboxOut } from "react-icons/ci";
 import { useWallet } from "../hooks/useWallet";
@@ -8,18 +8,23 @@ import { useWallet } from "../hooks/useWallet";
 export const User = () => {
 
 const {addrSlice, userAdresse} = useWallet();
+
+
 const [userOpen, isUserOpen] = useState(false);
+const buttonProfile = useRef<HTMLButtonElement>(null); 
+
 return ( 
 
     <div>
-      <button 
+      <button ref={buttonProfile}
       className="rounded-lg flex items-center p-2 cursor-pointer buttonFahome mt-1"
        onClick={() => isUserOpen(true)}><FaUser className="rounded-lg cursor-pointer mr-1 w-6"/></button> 
        {/* Profile Container */}
       { userOpen && (
-            <div className="fixed z-50 Profile items-center color rounded-lg right-0">
+            <div className="fixed z-50 items-center bg-[#100f18] rounded-lg right-0 h-100">
               <div className="relative flex items-center p-10">
                 <div>
+                  <button onClick={isUserOpen(false)}></button>
                 <span className="text-blue-400-">{addrSlice(userAdresse)}</span>
                 </div>
                 <div className="block text-left">

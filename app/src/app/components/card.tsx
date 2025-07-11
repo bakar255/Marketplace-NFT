@@ -37,6 +37,17 @@ export const Card = () => {
         img:"https://i2.seadn.io/ethereum/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/6565a1ed6615174cdcc4259dcccb81/856565a1ed6615174cdcc4259dcccb81.png?w=350",
         price:"0.37 ",
       },
+      
+
+      {
+        id: 4,
+        author:"CryptoPunks",
+        name:"CryptoPunk 6867",
+        img:"https://cryptopunks.app/public/images/cryptopunks/punk6867.png",
+        price:"0.17 ",
+      },
+
+      
 
 ]
 

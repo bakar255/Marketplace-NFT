@@ -96,7 +96,7 @@ return (
         <div
         className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex" key={provider.id}>
         <img src={provider.img} alt=""  className="w-10 h-10 ml-2"/>
-           <button className="mx-3 cursor-pointer" onClick={() => {provider.onClick}}  >{provider.provider}</button>
+           <button className="mx-3 cursor-pointer" onClick={provider.onClick}  >{provider.provider}</button>
         </div>
        ))}
     </div>

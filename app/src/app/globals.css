@@ -69,7 +69,7 @@ body {
   border: 2px solid;
   outline: none;
   transition: border-color 0.3s;
-  background-color:  #1b1b3a;
+  background-color:  #131313;
 }
 
 .input-container:focus-within {
@@ -180,7 +180,7 @@ body {
 }
 
 .Profile {
-  height: 120%;
+  height: 100%;
   backdrop-filter: blur(20px);
   width: 20%;
   background-color: #111114;
