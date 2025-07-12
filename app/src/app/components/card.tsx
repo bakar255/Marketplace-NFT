@@ -47,8 +47,6 @@ export const Card = () => {
         price:"0.17 ",
       },
 
-      
-
 ]
 
     return (
