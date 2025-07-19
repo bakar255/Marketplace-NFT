@@ -13,6 +13,7 @@ export const useWallet = () => {
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [BalanceOpen, setBalanceOpen] = useState<boolean>(false);
+  const [modelProvider, setModelProvider] = useState(false);
   
 
   const connectWallet = async () => {
@@ -25,14 +26,16 @@ export const useWallet = () => {
     await provider.send("eth_requestAccounts", []);
     const signer = await provider.getSigner();
     const address = await signer.getAddress();
+    const accounts = await provider.listAccounts();
     setIsConnected(true);
     setSigner(signer);
     setUserAdresse(address);
     setProvider(provider);
     setBalanceOpen(true);
+    setModelProvider(false);
     } catch (error) {
       console.log("Error Connecting wallet")
-    }
+    } 
   }
 
 const connectWalletConnect = async () => {
@@ -67,7 +70,7 @@ const connectWalletConnect = async () => {
   }
 
   
-   return { connectWallet, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
+   return { connectWallet, modelProvider, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
 
   
 };

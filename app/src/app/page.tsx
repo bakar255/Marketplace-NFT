@@ -11,14 +11,16 @@ import { Notif } from "./components/notification";
 import { Card } from "./components/card";
 import { User } from "./components/FaUser";
 
+
    export default function Home() {
 
    const { connectWallet, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
    const { balance, loading} = useBalance(userAdresse, provider,);
 
+
   return (
      <div className="min-w-lg min-h-screen "> 
-      <nav className=" font-bold shadow-sm min-h-15 rounded-lg items-center flex justify-between navbar-expand-lg color">
+      <nav className=" font-bold shadow-sm min-h-15 rounded-lg items-center flex justify-between navbar-expand-lg">
         <div className="mx-1 gap-8 flex ">  
          <div className="min-h-[40px] w-100 bg-gray-900 flex rounded-lg input-container ml-30">
           <IoIosSearch className="w-8 h-10 mx-3" />
@@ -50,6 +52,14 @@ import { User } from "./components/FaUser";
           </ul>
         </nav>
             <main className="">
+           <section className="flex justify-center items-center">
+          <div className=" w-2/6 mt-15">
+            <div className=" p-5 shadow-sm rounded-lg w-2xlflex-col">
+             <h1 className="text-white text-4xl">NFT MARKETPLACE</h1>
+             <h2 className="text-3xl text-gray-50">Where NFT are trade to earn !</h2>
+            </div>
+          </div>
+        </section>
         {/* NFT container */}
          <div className="showcase-container"> 
           <div className="flex flex-col items-center">

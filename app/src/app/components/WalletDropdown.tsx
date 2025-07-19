@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef} from "react";
 import { useWallet } from "../hooks/useWallet";
+import { ethers } from "ethers";
 import { FaWallet, FaChevronDown, FaUser} from "react-icons/fa";
 import { IoSendOutline, IoToggleOutline, } from "react-icons/io5";
 import { IoMdSettings, IoMdClose } from "react-icons/io";
@@ -11,7 +12,7 @@ export const WalletDropdown = () => {
   const [providerDetected,setProviderDetected] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [ModelProvider, setModelProvider] = useState(false);
-  const { connectWallet, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
+  const { connectWallet, connectWalletConnect, modelProvider, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen } = useWallet();
 
  useEffect(() =>  {
   const HandleClickOutside = (event: MouseEvent) => {
@@ -20,6 +21,9 @@ export const WalletDropdown = () => {
   }
  })
 
+ useEffect(() => {
+   if (isConnected) setModelProvider(false);
+ }, [isConnected]);
 
  const walletProvider = [
   
@@ -96,7 +100,10 @@ return (
         <div
         className="color rounded-lg py-2 cursor-pointer mt-4 font-bold text-left flex" key={provider.id}>
         <img src={provider.img} alt=""  className="w-10 h-10 ml-2"/>
-           <button className="mx-3 cursor-pointer" onClick={provider.onClick}  >{provider.provider}</button>
+           <button className="mx-3 cursor-pointer" onClick={async () => {
+            await connectWallet();
+           }}
+           >{provider.provider}</button>
         </div>
        ))}
     </div>
