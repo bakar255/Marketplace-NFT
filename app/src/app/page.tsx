@@ -19,7 +19,7 @@ import { User } from "./components/FaUser";
 
 
   return (
-     <div className="min-w-lg min-h-screen "> 
+     <div className="min-w-lg min-h-screen  bg-gradient-to-b from-sky-300y-900 to-gray-700"> 
       <nav className=" font-bold shadow-sm  min-h-15 items-center flex justify-between navbar-expand-lg">
         <div className="mx-1 gap-8 flex ">  
          <div className="min-h-[40px] w-100 bg-gray-900 flex rounded-lg input-container ml-30">
@@ -52,22 +52,29 @@ import { User } from "./components/FaUser";
           </ul>
         </nav>
             <main className="">
-           <section className="flex justify-center items-center py-20 bg-gradient-to-b from-sky-300y-900 to-gray-800">
+           <section className="flex justify-center items-center py-20 ">
           <div className="text-center max-w-2xl">
             <h1 className="text-white text-5xl font-bold mb-4 animate-fade-in">NFT MARKETPLACE</h1>
             <h2 className="text-2xl text-gray-300 mb-8">Where NFTs are traded to earn!</h2>
             <div className="flex justify-center gap-4">
-            <button className="bg-[#3c3fe2] hover:bg-[#827ace] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+            <button className="  text-white px-6 py-3 cursor-pointer rounded-lg font-medium transition-all duration-300 transform hover:scale-105" 
+            style= {{ 
+              backgroundColor:'rgb(39, 39, 92)'
+             }}
+            >
              Explore NFTs
               </button>
-              <button className=" text-white bg-[#3c3fe2] hover:bg-[#827ace] hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
+              <button className=" text-white cursor-pointer hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+                  style= {{ 
+                  backgroundColor:'rgb(39, 39, 92)'
+                }} >
                 Create NFT
               </button>
             </div>
           </div>
         </section>
-        {/* NFT container */}
-         <div className="showcase-container"> 
+         {/* NFT container */}
+         <div className="showcase-container "> 
           <div className="flex flex-col items-center">
           </div>
           <div>
@@ -76,6 +83,7 @@ import { User } from "./components/FaUser";
           </div>
          <Card /> 
     </div>
+       
  </main>
       <footer className="">
       </footer>

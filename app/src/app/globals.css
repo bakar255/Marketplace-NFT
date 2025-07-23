@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090907;
+  --background: #11110d;
   --foreground: #ffffff;
 }
 
@@ -113,15 +113,21 @@ body {
 }
 
 .notif {
-  position: flex;
+  position: fixed;
   border-radius: 0.25rem;
-  background-color: #1E1E24;
-  box-shadow: 0 0 20px rgba(5,5, 5, 0.5);
+  background-color: rgba(17, 17, 20, 0.85);
+  box-shadow: 0 0 20px rgba(5,5, 10, 0.5);
+  backdrop-filter: blur(15px);
   padding: 5px;
+  width: 15rem;
+  border-radius: 0,25rem;
+  z-index: 50;
+  right: 50px;
+  
 }
 
 .modelProvider {
-  background-color: #111114 ;
+  background-color: rgba(17, 17, 20, 0.85);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -132,10 +138,9 @@ body {
   text-align: center;
   border-radius: 0.50rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
   padding: 1rem;
+  backdrop-filter: blur(16px);
   box-shadow: 0 0 20px rgba(9, 9, 10, 0.5);
-  
 }
 
 .x {

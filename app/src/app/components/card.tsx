@@ -42,8 +42,8 @@ export const Card = () => {
       {
         id: 4,
         author:"CryptoPunks",
-        name:"CryptoPunk 6867",
-        img:"https://cryptopunks.app/public/images/cryptopunks/punk6867.png",
+        name:"CryptoPunk 6239",
+        img:"https://i2.seadn.io/ethereum/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/a9749d08a3f34829a9f233f47f5087/11a9749d08a3f34829a9f233f47f5087.png?w=350",
         price:"0.17 ",
       },
 

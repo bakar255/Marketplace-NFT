@@ -89,10 +89,10 @@ return (
         {isConnected && (  <FaChevronDown className={`transition-tranform ${isOpen ? "rotate-180" : ''}`}/>
         )}
     </button>
-    {/* Container Proivder  */}
+    {/* Container Proivder */}
     { ModelProvider && (  
-    <div className="modelProvider">
-      <div className=" flex justify-between relative"> 
+    <div className="modelProvider backdrop:blur-lg bg-opacity">
+      <div className=" flex justify-between relative "> 
        <label className="block font-bold text-left mb-4"> Connect your wallet</label>
        <button className="x cursor-pointer" onClick={() => setModelProvider(false)}> <IoMdClose /> </button>
        </div>
