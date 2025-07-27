@@ -19,38 +19,7 @@ import { User } from "./components/FaUser";
 
 
   return (
-     <div className="min-w-lg min-h-screen  bg-gradient-to-b from-sky-300y-900 to-gray-700"> 
-      <nav className=" font-bold shadow-sm  min-h-15 items-center flex justify-between navbar-expand-lg">
-        <div className="mx-1 gap-8 flex ">  
-         <div className="min-h-[40px] w-100 bg-gray-900 flex rounded-lg input-container ml-30">
-          <IoIosSearch className="w-8 h-10 mx-3" />
-          <input type="text" className="w-80 ml-2 text-white rounded-lg shadow-1 input" placeholder="Rechercher NFT's, Tokens..."/>
-          </div>
-          <li className="list-none">
-            <ul className="space-x-8 mt-2 ">
-              <a href="#" className="text-gray-300 hover:text-gray-400">Explore</a>
-              <a href="/#create" className=" text-gray-300 hover:text-gray-400">Create</a>
-              <a href="#" className="text-gray-300 hover:text-gray-400">Sell</a>
-            </ul>
-          </li>
-          <button className="h-full w-full navbarbtn"></button>
-           </div>
-             <ul className="">
-                <li className="flex gap-2.5">
-                  <div className="mr-15">
-                  { BalanceOpen && ( 
-                    <div className="flex mt-2 space-y-2 ">
-                      <a className="mr-3"> </a>
-                      <span>{balance}</span>
-                    </div>
-                  )}
-                  </div>
-                  <User/>
-                 <Notif />
-                <WalletDropdown  />
-             </li>
-          </ul>
-        </nav>
+         <div className="min-w-lg mx-auto min-h-screen  bg-gradient-to-b  to-[#1b1846]"> 
             <main className="">
            <section className="flex justify-center items-center py-20 ">
           <div className="text-center max-w-2xl">

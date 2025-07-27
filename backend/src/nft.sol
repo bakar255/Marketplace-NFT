@@ -4,33 +4,35 @@ pragma solidity ^0.8.20;
 import "../lib/openzeppelin-contracts/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-contract Nft is ERC721Pausable, Ownable(msg.sender) {
-
+contract Nft is ERC721Pausable, Ownable {
+    
     uint256 public constant MAX_SUPPLY = 100000;
     uint256 public mintPrice = 0.1 ether;
-
-    uint256 private _tokenIdTracker = 0;
+    uint256 public totalSupply;
     string private _baseTokenURI;
 
     event Mint(address indexed to, uint256 indexed tokenId);
 
-    constructor(string memory baseURI) ERC721("MyToken", "MTK") {
+    constructor(string memory baseURI) ERC721("MyToken", "MTK") Ownable(msg.sender) {
         _baseTokenURI = baseURI;
         _pause(); // Start paused for safety
     }
 
     /// @notice Mint a new NFT to the given address
-    function mint(address to) external onlyOwner whenNotPaused {
-        require(_tokenIdTracker < MAX_SUPPLY, "Max supply reached");
-        _tokenIdTracker++;
-        uint256 newTokenId = _tokenIdTracker;
-        _safeMint(to, newTokenId);
-        emit Mint(to, newTokenId);
+    function mint(address to) external payable whenNotPaused {
+        require(msg.value >= mintPrice, "Insufficient ETH");
+        require(totalSupply < MAX_SUPPLY, "Max supply reached");
+        require(to != address(0), "Cannot mint to zero address");
+        
+        totalSupply++;
+        _safeMint(to, totalSupply);
+        emit Mint(to, totalSupply);
     }
 
-    /// @notice Total NFTs minted
-    function totalSupply() external view returns (uint256) {
-        return _tokenIdTracker;
+    /// @notice Retirer les fonds du contrat
+    function withdraw() external onlyOwner {
+        (bool success, ) = payable(owner()).call{value: address(this).balance}("");
+        require(success, "Transfer failed");
     }
 
     /// @notice Override baseURI
@@ -50,6 +52,12 @@ contract Nft is ERC721Pausable, Ownable(msg.sender) {
 
     /// @notice Change base URI
     function setBaseURI(string calldata baseURI) external onlyOwner {
+        require(bytes(baseURI).length > 0, "Invalid base URI");
         _baseTokenURI = baseURI;
+    }
+
+    /// @notice Update mint price (onlyOwner)
+    function setMintPrice(uint256 newPrice) external onlyOwner {
+        mintPrice = newPrice;
     }
 }

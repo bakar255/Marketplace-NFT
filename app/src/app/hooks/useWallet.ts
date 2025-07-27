@@ -35,7 +35,9 @@ export const useWallet = () => {
     setModelProvider(false);
     } catch (error) {
       console.log("Error Connecting wallet")
-    } 
+    } finally {
+      console.error();
+    }
   }
 
 const connectWalletConnect = async () => {
@@ -69,10 +71,8 @@ const connectWalletConnect = async () => {
     setBalanceOpen(false);
   }
 
-  
    return { connectWallet, modelProvider, connectWalletConnect, userAdresse, signer, provider, addrSlice, disconnectWallet, isConnected, BalanceOpen };
 
-  
 };
 
 

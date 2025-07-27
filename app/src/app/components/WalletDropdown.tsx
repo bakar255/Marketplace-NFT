@@ -108,7 +108,7 @@ return (
        ))}
     </div>
     )}
-    {/* Wallet Dropdown obj*/}
+    {/* Wallet Dropdown object*/}
     {isConnected && isOpen && (
       <div className="dropdown-container flex flex-col">
         {Obj.map((item) => (

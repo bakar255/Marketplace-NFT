@@ -52,7 +52,7 @@ export const Card = () => {
     return (
         <div className="flex gap-5">
         {CryptoPunks.map((punk) => (
-          <div key={punk.id} className=" border-1 border-gray-600 rounded-lg w-54 overflow-hidden color transition-all ease-in-out duration-300">
+          <div key={punk.id} className=" nft-card">
               <div className="h-82">
               <img
                src={punk.img} 
@@ -64,7 +64,7 @@ export const Card = () => {
                    <div className="justify-between flex items-center mt-3">
                     <div className="flex ">
                       <span className="text-gray-500 text-xs"></span>
-                      <span className="text-2xl flex">{punk.price} <FaEthereum className="text-2xl ml-3 mb-2"/></span>              
+                      <span className="text-2xl flex">{punk.price} <FaEthereum className="text-2xl ml-3 mb-2 "/></span>
                     </div>
                    </div>
                 </div>
