@@ -8,6 +8,7 @@ import { useWallet } from "../hooks/useWallet";
 import { useBalance } from "../hooks/getSolde";
 import { WalletDropdown } from "./WalletDropdown";
 import { Notif } from "./notification";
+import Link from 'next/link';
 import { User } from "./FaUser";
 
 export function Navbar() {
@@ -25,7 +26,7 @@ export function Navbar() {
               <li className="list-none">
                 <ul className="space-x-8 mt-2 ">
                   <a href="#" className="text-gray-400 transition-all ease-in hover:text-white">Explore</a>
-                  <a href="/#create" className="text-gray-400 transition-all ease-in hover:text-white">Create</a>
+                  <a href="/create-nft" className="text-gray-400 transition-all ease-in hover:text-white">Create</a>
                   <a href="#" className="text-gray-400 transition-all ease-in hover:text-white">Sell</a>
                 </ul>
               </li>

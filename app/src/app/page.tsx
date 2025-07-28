@@ -31,14 +31,14 @@ import { User } from "./components/FaUser";
               backgroundColor:'rgb(39, 39, 92)'
              }}
             >
-             Explore NFTs
+                Explore NFTs
               </button>
-              <button className=" text-white cursor-pointer hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105"
+              <a href="/create-nft" className=" text-white cursor-pointer hover:text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105"
                   style= {{ 
                   backgroundColor:'rgb(39, 39, 92)'
                 }} >
                 Create NFT
-              </button>
+              </a>
             </div>
           </div>
         </section>

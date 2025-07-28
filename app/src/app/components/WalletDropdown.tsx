@@ -86,7 +86,7 @@ return (
     <button onClick={isConnected ? () => setIsOpen(!isOpen) : () => setModelProvider(true)}
      className="buttonConnect flex cursor-pointer">
         {isConnected ? addrSlice(userAdresse) : "Connect Wallet" } 
-        {isConnected && (  <FaChevronDown className={`transition-tranform ${isOpen ? "rotate-180" : ''}`}/>
+        {isConnected && (  <FaChevronDown className={`ml-2 mt-1 transition-tranform ${isOpen ? "rotate-180" : ''}`}/>
         )}
     </button>
     {/* Container Proivder */}
@@ -94,7 +94,7 @@ return (
     <div className="modelProvider backdrop:blur-lg bg-opacity">
       <div className=" flex justify-between relative "> 
        <label className="block font-bold text-left mb-4"> Connect your wallet</label>
-       <button className="x cursor-pointer" onClick={() => setModelProvider(false)}> <IoMdClose /> </button>
+       <button className="x cursor-pointer " onClick={() => setModelProvider(false)}> <IoMdClose /> </button>
        </div>
        {walletProvider.map((provider) =>(
         <div
